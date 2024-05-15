@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/product/1"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "naam": "Page toiletpapier",
+      "omschrijving": "Page toiletpapier 6 rollen",
+      "barcode": "23598125257",
+      "gewicht": "800gram",
+      "statiegeld": false,
+      "boven18": false
+    }
+  }
+}

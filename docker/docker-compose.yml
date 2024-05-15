@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16.2
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: techday
+      POSTGRES_MASTER: 'true'
+      REPLICATION_USER: replication
+      REPLICATION_PASSWORD: replication123
+    volumes:
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init.sql
+
+  flyway:
+    build: ./../flyway
+    command: -url=jdbc:postgresql://postgres:5432/techday -schemas=techday_owner -user=techday_owner -password=techday_owner -connectRetries=60 migrate
+
+  rest-api:
+    image: wiremock/wiremock:3.5.2
+    command: /docker-entrypoint.sh --disable-banner --local-response-templating --verbose
+    ports:
+      - '8090:8080'
+    volumes:
+      - ./stub:/home/wiremock:ro

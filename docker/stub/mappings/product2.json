@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/product/2"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 2,
+      "naam": "Banaan",
+      "omschrijving": "Banaan",
+      "tht": "2024-06-01",
+      "barcode": "861265786215",
+      "gewicht": "200gram",
+      "statiegeld": false,
+      "boven18": false
+    }
+  }
+}

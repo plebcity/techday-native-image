@@ -1,0 +1,43 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/product"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "naam": "Page toiletpapier",
+        "omschrijving": "Page toiletpapier 6 rollen",
+        "barcode": "23598125257",
+        "gewicht": "800gram",
+        "statiegeld": false,
+        "boven18": false
+      },
+      {
+        "id": 2,
+        "naam": "Banaan",
+        "omschrijving": "Banaan",
+        "tht": "2024-06-01",
+        "barcode": "861265786215",
+        "gewicht": "200gram",
+        "statiegeld": false,
+        "boven18": false
+      },
+      {
+        "id": 3,
+        "naam": "Coca-Cola 25cl blik",
+        "omschrijving": "Blikkie",
+        "tht": "2025-05-01",
+        "barcode": "5000112658620",
+        "inhoud": "250ml",
+        "statiegeld": true,
+        "boven18": false
+      }
+    ]
+  }
+}

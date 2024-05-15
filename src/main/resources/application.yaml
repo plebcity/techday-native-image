@@ -1,0 +1,8 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/techday?current_schema=techday_owner
+    username: techday_owner
+    password: techday_owner

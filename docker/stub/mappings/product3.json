@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/product/2"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "naam": "Coca-Cola 25cl blik",
+      "omschrijving": "Blikkie",
+      "tht": "2025-05-01",
+      "barcode": "5000112658620",
+      "inhoud": "250ml",
+      "statiegeld": true,
+      "boven18": false
+    }
+  }
+}
