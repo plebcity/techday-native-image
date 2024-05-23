@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.spring") version "1.9.23"
     kotlin("plugin.jpa") version "1.9.23"
+    id("org.graalvm.buildtools.native") version "0.10.2"
 }
 
 group = "nl.avisi"

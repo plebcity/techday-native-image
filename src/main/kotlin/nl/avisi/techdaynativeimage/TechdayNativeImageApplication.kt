@@ -4,6 +4,7 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import org.slf4j.LoggerFactory
+import org.springframework.aot.hint.annotation.RegisterReflectionForBinding
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
@@ -53,6 +54,7 @@ class CustomerController(
 interface CustomerRepository: CrudRepository<Customer, UUID>
 
 @Entity
+@RegisterReflectionForBinding(Array<UUID>::class)
 data class Customer(
         @Id
         val id: UUID = UUID.randomUUID(),
