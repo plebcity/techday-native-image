@@ -3,6 +3,7 @@ package nl.avisi.techdaynativeimage
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
+import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
@@ -66,14 +67,22 @@ data class Customer(
 class ProductController(
         private val restClient: RestClient
 ) {
+
+    companion object {
+        val log = LoggerFactory.getLogger(ProductController::class.java)
+    }
+
     @GetMapping("/{id}")
-    fun getProduct(@PathVariable id: String): Product =
-        restClient.get().uri(URI.create("http://localhost:8090/product/$id")).retrieve().body<Product>()!!
+    fun getProduct(@PathVariable id: String): Product {
+        log.info("Retrieving product $id")
+        return restClient.get().uri(URI.create("http://localhost:8090/product/$id")).retrieve().body<Product>()!!
+    }
 
     @GetMapping
-    fun getProducts(): List<Product> =
-        restClient.get().uri(URI.create("http://localhost:8090/product")).retrieve().body<List<Product>>()!!
-
+    fun getProducts(): List<Product> {
+        log.info("Retrieving all products")
+        return restClient.get().uri(URI.create("http://localhost:8090/product")).retrieve().body<List<Product>>()!!
+    }
 }
 
 data class Product(

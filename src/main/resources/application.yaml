@@ -6,3 +6,26 @@ spring:
     url: jdbc:postgresql://localhost:5432/techday?current_schema=techday_owner
     username: techday_owner
     password: techday_owner
+  jpa:
+    open-in-view: false
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
