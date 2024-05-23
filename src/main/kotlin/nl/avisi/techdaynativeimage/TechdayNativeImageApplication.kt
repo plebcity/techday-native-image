@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestClient
@@ -65,8 +66,8 @@ data class Customer(
 class ProductController(
         private val restClient: RestClient
 ) {
-    @GetMapping("\$id")
-    fun getProduct(id: String): Product =
+    @GetMapping("/{id}")
+    fun getProduct(@PathVariable id: String): Product =
         restClient.get().uri(URI.create("http://localhost:8090/product/$id")).retrieve().body<Product>()!!
 
     @GetMapping
