@@ -21,4 +21,10 @@ Actuator endpoints are also exposed on port 8081 and observability is configured
 2. Start the Application in the IDE or use `./gradlew bootRun` in the root folder
 
 # How do I turn this into a native image?
-Checkout the native-image branch of this repo (during or after the techday, no spoilers)
+Apply the `org.graalvm.buildtools.native` plugin to the project to enable certain tasks like nativeCompile and nativeTest. It will also change the output of bootBuildImage to be a native image in a docker image.
+
+Try to run `./gradlew nativeCompile` and see if everything compiles.
+
+Run the native image `./build/native/nativeCompile/techday-native-image` and see if it works.
+
+Use the links above to solve any issues you may have

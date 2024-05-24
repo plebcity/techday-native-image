@@ -48,3 +48,10 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+// Fixed in Java 22, see https://github.com/oracle/graal/issues/6957#issuecomment-1839327264
+graalvmNative {
+    binaries.all {
+        buildArgs.add("--strict-image-heap")
+    }
+}
